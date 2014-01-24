@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<layout>
+
+    <default>
+
+        <reference name="head">
+            <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+            <action method="removeItem"><type>skin_css</type><name>css/styles-ie.css</name></action>
+            <action method="removeItem"><type>skin_css</type><name>css/widgets.css</name></action>
+            <action method="addCss"><stylesheet>css/global.css</stylesheet></action>
+            <action method="addCss"><stylesheet>css/magnific.css</stylesheet></action>
+            <action method="addItem"><type>skin_js</type><name>js/jquery.1.10.2.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/jquery.magnific.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/inverseparadox.js</name></action>
+        </reference>
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+
+        <reference name="left">
+            <remove name="left.permanent.callout" />
+        </reference>
+
+        <reference name="right">
+            <remove name="catalog.compare.sidebar" />
+        </reference>
+
+    </default>
+
+    <!-- Category default layout -->
+    <catalog_category_default>
+        <reference name="product_list">
+            <action method="setColumnCount"><columns>4</columns></action>
+        </reference>
+        <reference name="product_list_toolbar">
+            <action method="setTemplate"><template>catalog/product/list/toolbar-top.phtml</template></action>
+            <action method="setDefaultListPerPage"><limit>10</limit></action>
+            <action method="addPagerLimit"><mode>list</mode><limit>10</limit></action>
+            <action method="addPagerLimit"><mode>list</mode><limit>20</limit></action>
+            <action method="addPagerLimit"><mode>list</mode><limit>40</limit></action>
+            <action method="addPagerLimit"><mode>list</mode><limit>100</limit></action>
+            <action method="addPagerLimit" translate="label"><mode>list</mode><limit>all</limit><label>All</label></action>
+            <action method="setDefaultGridPerPage"><limit>12</limit></action>
+            <action method="addPagerLimit"><mode>grid</mode><limit>12</limit></action>
+            <action method="addPagerLimit"><mode>grid</mode><limit>24</limit></action>
+            <action method="addPagerLimit"><mode>grid</mode><limit>48</limit></action>
+            <action method="addPagerLimit"><mode>grid</mode><limit>100</limit></action>
+            <action method="addPagerLimit" translate="label"><mode>grid</mode><limit>all</limit><label>All</label></action>
+        </reference>
+    </catalog_category_default>
+
+    <!-- Category layered (anchor) -->
+    <catalog_category_layered>
+        <reference name="product_list">
+            <action method="setColumnCount"><columns>4</columns></action>
+        </reference>
+        <reference name="product_list_toolbar">
+            <action method="setTemplate"><template>catalog/product/list/toolbar-top.phtml</template></action>
+            <action method="setDefaultListPerPage"><limit>10</limit></action>
+            <action method="addPagerLimit"><mode>list</mode><limit>10</limit></action>
+            <action method="addPagerLimit"><mode>list</mode><limit>20</limit></action>
+            <action method="addPagerLimit"><mode>list</mode><limit>40</limit></action>
+            <action method="addPagerLimit"><mode>list</mode><limit>100</limit></action>
+            <action method="addPagerLimit" translate="label"><mode>list</mode><limit>all</limit><label>All</label></action>
+            <action method="setDefaultGridPerPage"><limit>12</limit></action>
+            <action method="addPagerLimit"><mode>grid</mode><limit>12</limit></action>
+            <action method="addPagerLimit"><mode>grid</mode><limit>24</limit></action>
+            <action method="addPagerLimit"><mode>grid</mode><limit>48</limit></action>
+            <action method="addPagerLimit"><mode>grid</mode><limit>100</limit></action>
+            <action method="addPagerLimit" translate="label"><mode>grid</mode><limit>all</limit><label>All</label></action>
+        </reference>
+    </catalog_category_layered>
+
+    <!-- Catalog Product View (Any) -->
+    <catalog_product_view>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/jquery.elevatezoom.min.js</name></action>
+        </reference>
+        <reference name="product.info">
+            <block type="page/html_pager" name="product_review_list.toolbar" />
+            <block type="review/product_view_list" name="product.info.product_additional_data" as="product_reviews" template="review/product/view/list.phtml">
+                <block type="core/template" name="product_view.review.count" as="review_count" template="review/product/view/count.phtml" />
+                <block type="rating/entity_detailed" name="product_view.review.rating" as="review_rating" template="rating/detailed.phtml" />
+                <block type="review/form" name="product.review.form" as="review_form">
+                    <block type="page/html_wrapper" name="product.review.form.fields.before" as="form_fields_before" translate="label">
+                        <label>Review Form Fields Before</label>
+                        <action method="setMayBeInvisible"><value>1</value></action>
+                    </block>
+                </block>
+            </block>
+        </reference>
+        <!-- <remove name="product_tag_list" /> -->
+    </catalog_product_view>
+
+    <!-- Catalog Product Email to a Friend -->
+    <catalog_product_send>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </catalog_product_send>
+
+    <!-- Quick Search Form -->
+    <catalogsearch_result_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="product_list_toolbar">
+            <action method="setTemplate"><template>catalog/product/list/toolbar-top.phtml</template></action>
+            <action method="setDefaultListPerPage"><limit>10</limit></action>
+            <action method="addPagerLimit"><mode>list</mode><limit>10</limit></action>
+            <action method="addPagerLimit"><mode>list</mode><limit>20</limit></action>
+            <action method="addPagerLimit"><mode>list</mode><limit>40</limit></action>
+            <action method="addPagerLimit"><mode>list</mode><limit>100</limit></action>
+            <action method="addPagerLimit" translate="label"><mode>list</mode><limit>all</limit><label>All</label></action>
+            <action method="setDefaultGridPerPage"><limit>12</limit></action>
+            <action method="addPagerLimit"><mode>grid</mode><limit>12</limit></action>
+            <action method="addPagerLimit"><mode>grid</mode><limit>24</limit></action>
+            <action method="addPagerLimit"><mode>grid</mode><limit>48</limit></action>
+            <action method="addPagerLimit"><mode>grid</mode><limit>100</limit></action>
+            <action method="addPagerLimit" translate="label"><mode>grid</mode><limit>all</limit><label>All</label></action>
+        </reference>
+    </catalogsearch_result_index>
+
+    <!-- Advanced Search Form -->
+    <catalogsearch_advanced_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </catalogsearch_advanced_index>
+
+    <!-- Advanced Search Result -->
+    <catalogsearch_advanced_result>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </catalogsearch_advanced_result>
+
+    <!-- One Page Checkout -->
+    <checkout_onepage_index translate="label">
+        <reference name="checkout.onepage">
+
+            <action method="unsetChild"><alias>billing</alias></action>
+            <action method="unsetChild"><alias>shipping</alias></action>
+
+            <block type="ipboilerplate/checkout_onepage_address" name="checkout.onepage.address" as="address" template="checkout/onepage/address.phtml"/>
+
+        </reference>
+
+        <reference name="right">
+            <action method="unsetChild"><alias>checkout.progress.wrapper</alias></action>
+            <block type="page/html" name="checkout.order.summary" as="sidebar_order_summary" template="checkout/onepage/sidebar_summary.phtml">
+                <block type="checkout/cart_sidebar" name="checkout.order.summary.cart" as="cart" template="checkout/cart/sidebar-order-summary.phtml"/>
+                <action method="setChild"><name>checkout.progress.wrapper</name><block>checkout.progress.wrapper</block></action>
+            </block>
+        </reference>
+    </checkout_onepage_index>
+
+    <!-- One Page Checkout Success -->
+    <checkout_onepage_success>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="checkout.success">
+            <block type="sales/order_info" as="info" name="sales.order.info"/>
+            <block type="sales/order_view" name="sales.order.view">
+                <block type="sales/order_items" name="order_items" template="sales/order/items.phtml">
+                    <action method="addItemRender"><type>default</type><block>sales/order_item_renderer_default</block><template>sales/order/items/renderer/default.phtml</template></action>
+                    <action method="addItemRender"><type>grouped</type><block>sales/order_item_renderer_grouped</block><template>sales/order/items/renderer/default.phtml</template></action>
+                    <block type="sales/order_totals" name="order_totals" template="sales/order/totals.phtml">
+                        <action method="setLabelProperties"><value>colspan="4" class="a-right"</value></action>
+                        <action method="setValueProperties"><value>class="last a-right"</value></action>
+                        <block type="tax/sales_order_tax" name="tax" template="tax/order/tax.phtml" />
+                    </block>
+                </block>
+            </block>
+        </reference>
+    </checkout_onepage_success>
+
+    <!-- One Page Checkout Failure -->
+    <checkout_onepage_failure>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+    </checkout_onepage_failure>
+
+    <cms_index_defaultindex>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </cms_index_defaultindex>
+
+    <!-- Contact Us Form -->
+    <contacts_index_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </contacts_index_index>
+
+    <!-- Catalog Product Reviews List -->
+    <review_product_list>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </review_product_list>
+
+    <!-- Catalog Product Review View -->
+    <review_product_view>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </review_product_view>
+
+    <!-- RSS Feeds List -->
+    <rss_index_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </rss_index_index>
+
+    <!-- Catalog Product Email to a Friend -->
+    <sendfriend_product_send>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </sendfriend_product_send>
+
+    <!-- Tags List (All Available) -->
+    <tag_list_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    </tag_list_index>
+
+</layout>

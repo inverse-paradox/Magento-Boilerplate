@@ -1,0 +1,127 @@
+/* =============================================================================
+   DATA TABLES
+============================================================================= */
+.data-table {
+    width: 100%;
+    border: 1px $background-color solid;
+    .odd {
+        background: mix($background-color, #fff, 8);
+    }
+    .even {
+        background: mix($background-color, #fff, 18);
+    }
+    td.last,
+    th.last,
+    .table-cell.last {
+        border-right: 0;
+    }
+    tr.last th,
+    tr.last td,
+    .table-row.last .table-cell {
+        border-bottom: 0 !important;
+    }
+    th,
+    .header-row .table-cell {
+        padding: 3px 8px;
+        font-weight: bold;
+    }
+    td,
+    .table-cell {
+        padding: 3px 8px;
+    }
+    thead th,
+    .header-row .table-cell {
+        padding: 2px 8px;
+        font-weight: bold;
+        white-space: nowrap;
+        background: mix($background-color, #fff, 80);
+        vertical-align: middle;
+        border-right: 1px $background-color solid;
+        &.wrap {
+            white-space: normal;
+        }
+        a {
+            color: $default-font-color;
+        }
+        .tax-flag { 
+            font-size: .92em;
+            white-space: nowrap;
+        }
+    }
+    tfoot td,
+    .footer-row .table-cell {
+        background: mix($background-color, #fff, 80);
+        border-right: 1px $background-color solid;
+    }
+    tbody th,
+    tbody td,
+    .table-cell {
+        border-bottom: 1px mix($background-color, #fff, 50) solid;
+        border-right: 1px mix($background-color, #fff, 50) solid;
+    }
+}
+
+div.data-table {
+    display: table;
+}
+div.table-row {
+    display: table-row;
+}
+div.table-cell {
+    display: table-cell;
+}
+
+
+/* Bundle products tables =================================================== */
+.data-table {
+    tbody {
+        &.odd {
+            tr {
+                background: mix($background-color, #fff, 8) !important;
+            }
+        }
+        &.even {
+            tr {
+                background: mix($background-color, #fff, 18);
+            }
+        }
+        &.odd, &.even {
+            tr {
+                td {
+                    border-bottom: 0;
+                }
+                &.border {
+                    td {
+                        border-bottom: 1px mix($background-color, #fff, 50) solid;
+                    }
+                }
+            }
+        }
+        td {
+            .option-label { font-weight: bold; font-style: italic; }
+            .option-value { padding-left: 10px; }
+        }
+    }
+}
+
+
+/* Generic Info Box ========================================================= */
+.info-box { 
+    margin: 0 0 15px;
+    padding: 12px 15px;
+    @include linear-gradient(to bottom, #f1f1f1, 0%, #ffffff, 25%); 
+    border: 1px #ccc solid; 
+    h2 { 
+        font-weight: bold; 
+        font-size: 1.08em;
+    }
+}
+.info-table {
+    th { 
+        padding: 2px 15px 2px 0;
+        font-weight: bold; 
+    }
+    td { 
+        padding: 2px 0;
+    }
+}

@@ -1,0 +1,41 @@
+<?php
+    $columns = $this->getColumns();
+?>
+<div class="data-table" id="wishlist-table">
+    <div class="table-row header-row">
+        <?php $_col_count = 0; $_col_max = count($columns); ?>
+        <?php foreach ($columns as $column): ?>
+            <?php $_col_count++; ?>
+            <div class="table-cell<?php if ($_col_count == 1) echo ' first'; if ($_col_count == $_col_max) echo ' last'; ?>"><?php echo $column->getTitle();?></div>
+        <?php endforeach; ?>
+    </div>
+    <?php if (count($this->getItems())): ?>
+        <?php $_row_count = 0; $_row_max = count($this->getItems()); ?>
+        <?php foreach ($this->getItems() as $item): ?>
+            <?php $_row_count++; ?>
+            <div class="table-row<?php if ($_row_count == 1) echo ' first'; if ($_row_count == $_row_max) echo ' last'; ?>" id="item_<?php echo $item->getId();?>">
+                <?php $_col_count = 0; $_col_max = count($columns); ?>
+                <?php foreach ($columns as $column): ?>
+                    <?php $_col_count++; ?>
+                    <div class="table-cell<?php if ($_col_count == 1) echo ' first'; if ($_col_count == $_col_max) echo ' last'; ?>">
+                        <?php $column->setItem($item); echo $column->toHtml($item);?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endforeach ?>
+    <?php else: ?>
+        <div class="table-cell wishlist-empty"><?php echo $this->__('This Wishlist has no Items');?></div>
+    <?php endif; ?>
+</div>
+<?php foreach ($columns as $column): ?>
+    <?php echo $column->getAdditionalHtml();?>
+<?php endforeach; ?>
+<script type="text/javascript">
+//<![CDATA[
+    decorateTable('wishlist-table');
+
+<?php foreach ($columns as $column): ?>
+    <?php echo $column->getJs();?>
+<?php endforeach; ?>
+//]]>
+</script>

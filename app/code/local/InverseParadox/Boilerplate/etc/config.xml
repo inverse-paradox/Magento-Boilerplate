@@ -1,0 +1,68 @@
+<config>
+    <modules>
+        <InverseParadox_Boilerplate>
+            <version>0.1.0</version>
+        </InverseParadox_Boilerplate>
+    </modules>
+    <global>
+        <helpers>
+            <ipboilerplate>
+                <class>InverseParadox_Boilerplate_Helper</class>
+            </ipboilerplate>
+        </helpers>
+        <blocks>
+            <ipboilerplate>
+                <class>InverseParadox_Boilerplate_Block</class>
+            </ipboilerplate>
+            <checkout>
+                <rewrite>
+                    <onepage>InverseParadox_Boilerplate_Block_Checkout_Onepage</onepage>
+                </rewrite>
+            </checkout>
+            <sales>
+                <rewrite>
+                    <order_info>InverseParadox_Boilerplate_Block_Sales_Order_Info</order_info>
+                    <order_view>InverseParadox_Boilerplate_Block_Sales_Order_View</order_view>
+                    <order_items>InverseParadox_Boilerplate_Block_Sales_Order_Items</order_items>
+                </rewrite>
+            </sales>
+            <customer>
+                <rewrite>
+                    <account_navigation>InverseParadox_Boilerplate_Block_Customer_Account_Navigation</account_navigation>
+                </rewrite>
+            </customer>
+        </blocks>
+        <cache>
+            <types>
+                <ipboilerplate translate="label,description" module="inverseparadox_boilerplate">
+                    <label>Category Image Cache</label>
+                    <description>Deletes all cached category images.</description>
+                    <tags>IPCATIMG</tags>
+                </ipboilerplate>
+            </types>
+        </cache>
+    </global>
+    <frontend>
+        <routers>
+            <checkout>
+                <args>
+                    <modules>
+                        <InverseParadox_Boilerplate before="Mage_Checkout">InverseParadox_Boilerplate</InverseParadox_Boilerplate>
+                    </modules>
+                </args>
+            </checkout>
+        </routers>
+    </frontend>
+    <adminhtml>
+        <events>
+            <adminhtml_cache_refresh_type>
+                <observers>
+                    <ipcatimg_clean_cache>
+                        <class>ipboilerplate/category_image_observer</class>
+                        <method>cleanCache</method>
+                    </ipcatimg_clean_cache>
+                </observers>
+            </adminhtml_cache_refresh_type>
+        </events>
+    </adminhtml>
+</config>

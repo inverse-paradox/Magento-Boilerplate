@@ -1,0 +1,492 @@
+/* =============================================================================
+   SIDE BLOCKS
+============================================================================= */
+
+/* Generic Styles =========================================================== */
+.block {
+    margin: 0 0 14px;
+    padding: 10px;
+    background: $background-color;
+    .block-title {
+        margin: 0 0 10px;
+        strong {
+            display: block;
+            font: bold 1.2em $heading-font-family;
+        }
+    }
+    .block-subtitle {
+        margin: 0 0 10px;
+        font-weight: bold;
+    }
+    .block-content {
+        padding: 10px;
+        background: $page-body-bg;
+        li.item { 
+            padding: 7px 9px;
+        }
+        .product-name { 
+            color: #1e7ec8;
+        }
+    }
+    .actions {
+        margin: 10px -10px 0;
+        padding: 10px 0 0;
+        text-align: right;
+        background: $background-color;
+        a {
+            float: left;
+        }
+    }
+    ol {
+        list-style: none;
+    }
+    li {
+        margin: 12px 0 0;
+        padding: 12px 0 0;
+        border-top: 1px $background-color solid;
+        &:first-child {
+            border: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+    }
+    .btn-remove,
+    .btn-edit { 
+        float: right; 
+        margin: 1px 0 2px 5px;
+    }
+}
+
+
+/* Mini Products List ======================================================= */
+.mini-products-list {
+    margin: 0 -10px;
+    li {
+        padding: 10px;
+        border-top: 1px $background-color solid;
+        &:first-child {
+            border-top: none;
+        }
+    }
+    .product-image {
+        float: left;
+        width: 50px;
+        border: 1px darken($background-color, 26%) solid;
+    }
+    .product-details {
+        margin-left: 60px;
+        .product-name {
+            word-wrap: break-word;
+        }
+    }
+    .product-name a {
+        text-decoration: underline;
+        &:hover, &:active {
+            color: $default-font-color;
+        }
+    }
+    .price {
+        float: left;
+    }
+    .qty {
+        float: left;
+        margin-left: 5px;
+    }
+    .product-actions {
+        float: right;
+        margin: 3px 0 0;
+    }
+    .nobr {
+        white-space: normal !important;
+        small {
+            word-wrap: break-word;
+        }
+    }
+}
+
+
+/* Block: Account =========================================================== */
+.block-account {
+    li {
+        margin: 6px 0 0;
+        padding: 6px 6px 0;
+    }
+}
+
+
+/* Block: Currency Switcher ================================================= */
+.block-currency {
+    height: 51px; 
+    padding: 7px 12px 10px;
+    @include linear-gradient(to bottom, #6a8ca7, 0%, #2b5a80, 100%); 
+    border: 1px #314b62 solid; 
+    border-radius: 4px;
+    box-shadow: inset 0 0 2px #608ba7;
+    .block-title { 
+        margin: 0 0 5px; 
+        padding: 0; 
+        background: none; 
+        border: 0;
+        strong { 
+            padding: 0 0 0 21px;
+            font: bold 13px/21px $default-font-family; 
+            text-transform:none; 
+            color: #ffffff; 
+        }
+    }
+    .block-content { 
+        padding: 0;
+        background: none; 
+        select { 
+            width: 100%; 
+            padding: 0;
+        }
+    }
+}
+
+
+/* Block: Layered Navigation ================================================ */
+.block-layered-nav {
+    .block-subtitle {
+        display: none;
+        margin: 0 5px 5px; 
+        padding: 4px 9px;
+        font: bold 1em $heading-font-family;
+        text-transform: uppercase;
+        background: mix($background-color, $page-body-bg);
+    }
+    .block-content {
+        padding: 0;
+    }
+    dt { 
+        padding: 10px 15px;
+        font: bold 1.14em $heading-font-family;
+        text-transform: uppercase;
+    }
+    dd { 
+        padding: 0 10px 10px;
+        border-bottom: 10px $background-color solid;
+        &.last { 
+            border: none;
+        }
+        li {
+            margin: 6px 0 0;
+            padding: 6px 5px 0 5px;
+            border-color: mix($background-color, $page-body-bg);
+        }
+    }
+    .currently {
+        padding: 5px 0 0;
+        .block-subtitle {
+            display: block;
+        }
+        li { 
+            position: relative; 
+            z-index: 1; 
+            margin: 0;
+            padding: 6px 24px 6px 15px; 
+            line-height: 1.5;
+            border: none;
+        }
+        .label { 
+            display: inline-block; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            vertical-align: top;
+        }
+        .value { 
+            display: inline-block;
+            vertical-align: top;
+        }
+        .btn-previous,
+        .btn-remove { 
+            position: absolute; 
+            right: 15px; 
+            top: 9px;
+            margin: 0;
+        }
+        .btn-previous { 
+            right: 25px;
+        }
+    }
+    .actions { 
+        padding: 0 15px 5px;
+        font-size: 11px; 
+        text-align: right;
+        background: none;
+        border-bottom: 10px $background-color solid;
+        a { 
+            float: none;
+        }
+    }
+}
+.block-layered-nav.layered-nav-popup {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 25px;
+    display: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    #filter-popup-close {
+        display: block;
+        float: right;
+        margin: 5px 5px 0 0;
+        width: 15px;
+        height: 14px;
+        background: url(../images/icons-filter.png) no-repeat 0 -92px;
+        &:hover, &:active {
+            background-position: 0 -138px;
+        }
+    }
+}
+.block-layered-nav.layered-nav-popup.open {
+    display: block;
+}
+
+
+/* Block: Cart ============================================================== */
+.block-cart {
+    .block-content {
+        padding-bottom: 0;
+    }
+    .summary {
+        margin: 0 -10px;
+        padding: 0 10px 10px;
+        text-align: center;
+        border-bottom: 10px $background-color solid;
+        .price {
+            font-weight: bold;
+        }
+    }
+    .mini-products-list {
+        margin-bottom: -10px;
+    }
+    .empty {
+        padding-bottom: 10px;
+    }
+}
+
+
+/* Block: Wishlist ========================================================== */
+.block-wishlist {
+    .actions {
+        text-align: right;
+        a { 
+            float: none; 
+        }
+    }
+}
+
+
+/* Block: Related =========================================================== */
+.block-related {
+    input.checkbox { 
+        float: left;
+    }
+    .product { 
+        margin-left: 20px;
+    }
+}
+
+
+/* Block: Compare Products ================================================== */
+.page-popup .link-print { 
+    padding: 2px 0 2px 25px; 
+    font-weight: bold; 
+    color: #1e7ec8;
+    background: url(../images/i_print.gif) 0 2px no-repeat; 
+}
+.compare-table {
+    border: 0;
+    thead {
+        tr.first th,
+        tr.first td {
+            padding: 0; 
+            font-size: 0; 
+            line-height: 0;
+            border: 0; 
+            background: none; 
+        }
+    }
+    tbody {
+        th {
+            @include linear-gradient(to right, #d9e5ee, 97%, #9fbace, 100%);
+        }
+        th, td {
+            padding: 10px; 
+            border: 0; 
+            border-top: 1px solid #cccccc; 
+            border-left: 1px solid #cccccc;
+        }
+        td.last { 
+            border-right: 1px solid #cccccc;
+        }
+        tr.last th,
+        tr.last td {
+            border-bottom: 1px solid #cccccc !important;
+        }
+        tr.add-to-row td { 
+            text-align: center;
+            background: #fffada; 
+        }
+    }
+     tr.first td {
+        text-align: center;
+        .product-name { 
+            margin: 0 0 5px; 
+            font-size: 13px; 
+            font-weight: bold; 
+            color: #203548;
+            a { 
+                color: #203548;
+            }
+        }
+        .ratings { 
+            width: 69px; 
+            margin: 0 auto; 
+        }
+        p {
+            margin: 0;
+        }
+    }
+    tr.add-to-row td p { 
+        margin: 0;
+    }
+    .btn-remove { 
+        float: right; 
+        width: 72px; 
+        height: 15px; 
+        background-image: url(../images/btn_remove2.gif); 
+    }
+}
+
+
+/* Block: Poll ============================================================== */
+.block-poll {
+    .block-content {
+        padding-bottom: 0;
+    }
+    li {
+        margin: 4px -10px 0;
+        padding: 4px 10px 0;
+        &:first-child {
+            padding-top: 4px;
+            border-top: 1px $background-color solid;
+        }
+    }
+    label {
+        color: lighten($default-font-color, 20%);
+    }
+}
+
+
+/* Block: Tags ============================================================== */
+.block-tags {
+    .block-content {
+        padding-bottom: 0;
+    }
+    .tags-list {
+        padding: 0;
+        font-size: $default-font-size;
+        background: none;
+        border: none;
+        a {
+            color: $default-font-color;
+            &:hover, &:active {
+                text-decoration: underline;
+            }
+        }
+        li {
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .actions a { float: none; }
+}
+
+
+/* Block: Subscribe ========================================================= */
+.block-subscribe {
+    .block-content { 
+        padding-bottom: 0; 
+    }
+    input.input-text {
+        display: block;
+        margin: 3px 0;
+        width: 90%;
+    }
+}
+
+
+/* Block: Recently Viewed =================================================== */
+.block-viewed {
+    .mini-products-list {
+        margin-top: -10px;
+        margin-bottom: -10px;
+    }
+}
+
+
+/* Block: Reorder =========================================================== */
+.block-reorder {
+    .block-content {
+        padding-bottom: 0;
+    }
+    input.checkbox { 
+        float: left;
+        margin: 2px -20px 0 0;
+    }
+    .product-name { 
+        margin-left: 20px;
+    }
+    .validation-advice { 
+        margin: 3px 9px 7px;
+    }
+}
+
+
+/* Block: Banner ============================================================ */
+.block-banner { 
+    border: 0; 
+    .block-content { 
+        padding: 0; 
+        text-align: center; 
+    }
+}
+
+
+/* Block: Login ============================================================= */
+.block-login {
+    .block-content { 
+        padding: 5px 10px; 
+    }
+    label { 
+        font-weight: bold; 
+        color: #666666; 
+    }
+    input.input-text { 
+        margin: 3px 0; 
+        display: block; 
+        width: 167px; 
+    }
+    .actions { 
+        margin: 3px 0 0; 
+        padding: 0; 
+        background: none; 
+        button.button {
+            background: #f18200;
+        }
+    }
+}
+
+
+/* Paypal =================================================================== */
+.sidebar .paypal-logo { 
+    display: block; 
+    margin: 10px 0; 
+    text-align: center; 
+    a { 
+        float: none;
+    }
+}

@@ -1,0 +1,194 @@
+/* =============================================================================
+   PAGE TITLES
+============================================================================= */
+h1, h2, h3, h4, h5, h6 { 
+    margin: 0 0 5px;
+    color: $default-font-color;
+    font-family: $heading-font-family;
+    line-height: 1.5;
+}
+h1 { 
+    font-size: 1.67em;
+    font-weight: normal;
+}
+
+.page-title { 
+    margin: 0 0 25px;
+    width: 100%;
+    border-bottom: 1px $background-color solid;
+    overflow: hidden;
+    h1, h2 {
+        margin: 0;
+        color: $default-font-color;
+        font: bold 1.67em $heading-font-family;
+    }
+}
+
+.title-buttons {
+    text-align: right;
+    h1, h2, h3, h4, h5, h6 {
+        float: left;
+    }
+}
+
+
+/* =============================================================================
+   ADMIN CONTROLLED WYSIWYG CONTENT
+============================================================================= */
+.std {
+    h2 {
+        margin: 1em 0 .3em;
+        font-size: 1.71em;
+    }
+    h3 {
+        margin: 1em 0 .3em;
+        font-size: 1.29em;
+    }
+    h4 {
+        margin: 1em 0 .3em;
+        font-size: 1em;
+        font-weight: bold;
+    }
+    p {
+        margin: 0 0 1em;
+    }
+    ul {
+        margin: 0 0 1em 1.5em;
+        list-style: disc;
+    }
+    ol {
+        margin: 0 0 1em 2.5em;
+        list-style: decimal;
+    }
+    li {
+        margin: 0 0 .5em;
+    }
+}
+
+
+/* =============================================================================
+   CONTENT STYLES
+============================================================================= */
+
+/* Breadcrumbs ============================================================== */
+.breadcrumbs { 
+    margin: 0 0 13px;
+    font-size: .86em; 
+    line-height: 1.25; 
+    li { 
+        display: inline;
+        strong { 
+            font-weight:bold;
+        }
+    }
+}
+
+
+/* Product Name ============================================================= */
+.product-name { 
+    margin: 0;
+    font-size: 1em;
+    font-weight: normal;
+    a {
+        color: $highlight-color;
+    }
+}
+
+
+/* Product Tags ============================================================= */
+.tags-list { 
+    display: block;
+    padding: 10px;
+    font-size: 13px;
+    background: #f8f7f5;
+    border: 1px solid #c1c4bc;
+    li { 
+        display: inline !important; 
+        margin: 0 4px 0 0;
+        a { 
+            color: #1b2d3b;
+        }
+    }
+}
+
+
+/* Advanced Search ========================================================== */
+.advanced-search {
+    .form-list {
+        label { 
+            width: 160px;
+            padding-right: 10px;
+        }
+        .input-box, .input-range {
+            float: left;
+            clear: none;
+        }
+    }
+}
+.advanced-search-amount {
+    margin: 0 0 10px;
+}
+.advanced-search-summary { 
+    margin: 10px 0;
+    padding: 10px;
+    background: #fff6f1;
+    border: 1px solid #e9d7c9;
+    ul { 
+        float: left;
+        width: 49%;
+    }
+    strong {
+        color: #E17C24;
+        padding-left: 15px;
+        background: url(../images/i_search_criteria.gif) 0 3px no-repeat;
+    }
+    p { 
+        clear: both;
+        font-weight: bold;
+        margin: 0;
+    }
+}
+
+
+/* Sitemap ================================================================== */
+.page-sitemap {
+    .links {
+        margin: 0 8px -22px 0;
+        text-align: right;
+        a {
+            position: relative;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .sitemap {
+        margin: 12px;
+        a {
+            color: #1b2d3b;
+        }
+        li {
+            margin: 3px 0;
+            &.level-0 {
+                margin: 10px 0 0;
+                font-weight: bold;
+                a { 
+                    color: #1e7ec8;
+                }
+            }
+        }
+    }
+}
+
+
+/* RSS ====================================================================== */
+.rss-title h1 { 
+    padding-left: 27px;
+    background: url(../images/i_rss-big.png) 0 4px no-repeat;
+}
+.rss-table .link-rss { 
+    display: block;
+    line-height: 1.55;
+    background-position: 0 4px;
+}

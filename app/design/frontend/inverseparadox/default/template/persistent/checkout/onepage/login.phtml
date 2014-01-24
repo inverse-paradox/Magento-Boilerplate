@@ -1,0 +1,128 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Customer onepage checkout login form template
+ *
+ * @see app/design/frontend/base/default/template/checkout/onepage/login.phtml
+ */
+/** @var $this Mage_Checkout_Block_Onepage_Login */
+?>
+<div class="col2-set">
+    <?php echo $this->getChildHtml('login_before')?>
+    <div class="col-1">
+        <h3><?php echo $this->__('New Customers') ?></h3>
+        <?php if( $this->getQuote()->isAllowedGuestCheckout() ): ?>
+            <p><?php echo $this->__('Proceed to our safe and secure checkout now. You do not need to create an account.') ?></p>
+            <p><?php echo $this->__('You will have the option to create an account with us later.') ?></p>
+        <?php else: ?>
+            <p><strong><?php echo $this->__('Register and save time!') ?></strong><br />
+            <?php echo $this->__('Register with us for future convenience:') ?></p>
+            <ul>
+                <li><?php echo $this->__('Fast and easy check out') ?></li>
+                <li><?php echo $this->__('Easy access to your order history and status') ?></li>
+            </ul>
+        <?php endif; ?>
+        <div class="buttons-set">
+            <p class="required">&nbsp;</p>
+            <?php if ($this->getQuote()->isAllowedGuestCheckout()): ?>
+                <button id="onepage-guest-register-button" type="button" class="button" onclick="checkout.continueAsGuest();"><span><span><?php echo $this->__('Continue as a Guest') ?></span></span></button>
+            <?php elseif ($this->helper('checkout')->isCustomerMustBeLogged()): ?>
+                <button id="onepage-guest-register-button" type="button" class="button" onclick="window.location='<?php echo $this->helper('checkout/url')->getRegistrationUrl();?>'"><span><span><?php echo $this->__('Register') ?></span></span></button>
+            <?php else: ?>
+                <form action="<?php echo $this->getUrl('persistent/index/saveMethod'); ?>">
+                    <button id="onepage-guest-register-button" type="submit" class="button"><span><span><?php echo $this->__('Register') ?></span></span></button>
+                </form>
+            <?php endif; ?>
+        </div>
+    </div>
+    <div class="col-2">
+        <h3><?php echo $this->__('Returning Customers') ?></h3>
+        <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+        <form id="login-form" action="<?php echo $this->getPostAction() ?>" method="post">
+        <fieldset>
+            <p><?php echo $this->__('Sign in now for a faster checkout process.') ?></p>
+            <ul class="form-list">
+                <li>
+                    <label for="login-email" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
+                    <div class="input-box">
+                        <input type="text" class="input-text required-entry validate-email" id="login-email" name="login[username]" value="<?php echo $this->htmlEscape($this->getUsername()) ?>" />
+                    </div>
+                </li>
+                <li>
+                    <label for="login-password" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
+                    <div class="input-box">
+                        <input type="password" class="input-text required-entry" id="login-password" name="login[password]" />
+                    </div>
+                    <a href="<?php echo $this->getUrl('customer/account/forgotpassword') ?>" class="forgot-password"><?php echo $this->__('Forgot your password?') ?></a>
+                </li>
+                <?php echo $this->getChildHtml('form.additional.info'); ?>
+                <?php echo $this->getChildHtml('persistent.remember.me'); ?>
+            </ul>
+            <input name="context" type="hidden" value="checkout" />
+        </fieldset>
+        </form>
+        <div class="buttons-set">
+            <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+            <button type="submit" class="button" onclick="onepageLogin(this)"><span><span><?php echo $this->__('Login') ?></span></span></button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+    var loginForm = new VarienForm('login-form', true);
+    $('login-email').observe('keypress', bindLoginPost);
+    $('login-password').observe('keypress', bindLoginPost);
+    function bindLoginPost(evt){
+        if (evt.keyCode == Event.KEY_RETURN) {
+            loginForm.submit();
+        }
+    }
+    function onepageLogin(button)
+    {
+        if(loginForm.validator && loginForm.validator.validate()){
+            button.disabled = true;
+            loginForm.submit();
+        }
+    }
+//]]>
+</script>
+<?php
+    $registerParam = $this->getRequest()->getParam('register');
+    if ($registerParam || $registerParam === ''):
+?>
+    <script type="text/javascript">
+    //<![CDATA[
+        document.observe("dom:loaded", function() {
+            if($('login:register')) {
+                $('login:register').checked = true;
+                checkout.setMethod();
+            }
+        })
+    //]]>
+    </script>
+<?php endif; ?>

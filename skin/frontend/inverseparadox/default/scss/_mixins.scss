@@ -1,0 +1,39 @@
+/* ===========================================================
+   MIXINS
+=========================================================== */
+%clearfix {
+    &:after {
+        content: ".";
+        display: block;
+        clear: both;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+    }
+    .lte-ie8 & {
+        zoom: 1;
+    }
+}
+@mixin hide-text {
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+@mixin linear-gradient($direction, $color1, $offset1, $color2, $offset2) {
+    $angle_webkit: 'left top, left bottom';
+    $angle_old: 'top';
+    @if $direction == 'to right' {
+        $angle_webkit: 'left top, right top';
+        $angle_old: 'left';
+    }
+    background: $color1;
+    background-image:    -moz-linear-gradient(#{$angle_old}, #{$color1} #{$offset1}, #{$color2} #{$offset2});
+    background-image:        -webkit-gradient(linear, #{$angle_webkit}, color-stop(#{$offset1}, #{$color1}), color-stop(#{$offset2}, #{$color2}));
+    background-image: -webkit-linear-gradient(#{$angle_old}, #{$color1} #{$offset1}, #{$color2} #{$offset2});
+    background-image:      -o-linear-gradient(#{$angle_old}, #{$color1} #{$offset1}, #{$color2} #{$offset2});
+    background-image:     -ms-linear-gradient(#{$angle_old}, #{$color1} #{$offset1}, #{$color2} #{$offset2});
+    background-image:         linear-gradient(#{$direction}, #{$color1} #{$offset1}, #{$color2} #{$offset2});
+    .lte-ie9 & {
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color1}', endColorstr='#{$color2}', GradientType=0);
+    }
+}

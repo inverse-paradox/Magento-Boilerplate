@@ -1,0 +1,61 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Cart cross sell items template
+ *
+ * @see Mage_Checkout_Block_Cart_Crosssell
+ */
+?>
+<?php if($this->getItemCount()): ?>
+<div class="crosssell">
+    <h2><?php echo $this->__('Based on your selection, you may be interested in the following items:') ?></h2>
+    <ul id="crosssell-products-list" class="products-grid">
+    <?php $i = 0; foreach ($this->getItems() as $_item): ?>
+        <?php 
+        $i++; 
+        $_class = '';
+        if ($i % 5 == 0) $_class .= ' last-5-col';
+        if (($i - 1) % 5 == 0) $_class .= ' first-5-col';
+        if ($i % 4 == 0) $_class .= ' last-4-col';
+        if (($i - 1) % 4 == 0) $_class .= ' first-4-col';
+        if ($i % 3 == 0) $_class .= ' last-3-col';
+        if (($i - 1) % 3 == 0) $_class .= ' first-3-col';
+        $_class .= ($i % 2 == 0) ? ' even' : ' odd';
+        ?>
+        <li class="item<?php echo $_class; ?>">
+            <div class="product-wrapper">
+                <a class="product-image" href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_item->getName()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'small_image')->resize(180); ?>" width="180" height="180" alt="<?php echo $this->htmlEscape($_item->getName()) ?>" /></a>
+                <h3 class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->htmlEscape($_item->getName()) ?></a></h3>
+                <?php echo $this->getPriceHtml($_item, true) ?>
+            </div><!--/product-wrapper-->
+        </li>
+    <?php endforeach; ?>
+    </ul>
+    <script type="text/javascript">decorateList('crosssell-products-list', 'none-recursive')</script>
+</div>
+<?php endif; ?>

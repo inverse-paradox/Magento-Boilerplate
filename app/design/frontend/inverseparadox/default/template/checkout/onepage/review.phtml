@@ -1,0 +1,63 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="order-review" id="checkout-review-load">
+    <h3>Review and Place Your Order</h3>
+    <p>Clicking &ldquo;place order&rdquo; will finalize your transaction.</p>
+    <div class="shipping-summary">
+        <div class="shipping-address-summary">
+            <h4>
+                <?php echo $this->__('Shipping Address') ?>
+                <a href="#address" onclick="checkout.gotoSection('address');return false;"><?php echo $this->__('Change') ?></a>
+            </h4>
+            <address><?php echo $this->getQuote()->getShippingAddress()->format('html') ?></address>
+        </div>
+        <div class="shipping-method-summary">
+            <h4>
+                <?php echo $this->__('Shipping Method') ?>
+                <a href="#shipping_method" onclick="checkout.gotoSection('shipping_method');return false;"><?php echo $this->__('Change') ?></a>
+            </h4>
+            <p><?php echo $this->escapeHtml($this->getQuote()->getShippingAddress()->getShippingDescription()) ?></p>
+        </div>
+    </div>
+    <div class="billing-summary">
+        <div class="billing-address-summary">
+            <h4>
+                <?php echo $this->__('Billing Address') ?>
+                <a href="#address" onclick="checkout.gotoSection('address');return false;"><?php echo $this->__('Change') ?></a>
+            </h4>
+            <address><?php echo $this->getQuote()->getBillingAddress()->format('html') ?></address>
+        </div>
+        <div class="payment-method-summary">
+            <h4>
+                <?php echo $this->__('Payment Method') ?>
+                <a href="#payment" onclick="checkout.gotoSection('payment');return false;"><?php echo $this->__('Change') ?></a>
+            </h4>
+            <?php echo $this->getLayout()->createBlock('checkout/onepage_payment_info')->toHtml() ?>
+        </div>
+    </div>
+    <?php echo $this->getChildHtml('info') ?>
+</div>

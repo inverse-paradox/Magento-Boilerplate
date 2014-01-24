@@ -1,0 +1,9 @@
+<div class="block block-checkout-summary">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Order Summary') ?></span></strong>
+    </div>
+    <div class="block-content">
+        <?php echo $this->getChildHtml('cart'); ?>
+        <?php echo $this->getChildHtml('checkout.progress.wrapper'); ?>
+    </div>
+</div>

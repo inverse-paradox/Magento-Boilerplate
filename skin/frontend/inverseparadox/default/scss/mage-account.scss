@@ -1,0 +1,567 @@
+/* =============================================================================
+   MY ACCOUNT
+============================================================================= */
+.my-account .title-buttons .link-rss { float: none; margin: 0; }
+
+
+/* Pagination =============================================================== */
+.my-account .pager {
+    margin: 10px 0;
+    .amount {
+        float: left;
+        margin: 0 0 4px;
+    }
+    .limiter {
+        float: right;
+        margin: 0 0 4px;
+    }
+    .pages {
+        clear: both;
+        padding: 4px 0 0;
+        border-top: 1px $background-color solid;
+    }
+
+    /* Breakpoint: 370 ============================================== */
+    @media all and (max-width: 370px) {
+        .amount {
+            float: none;
+        }
+        .limiter {
+            float: none;
+        }
+    }
+
+}
+
+
+/* Dashboard ================================================================ */
+.dashboard {
+    .welcome-msg { 
+        margin: 0 0 1.5em 0;
+        p { 
+            margin: 0;
+        }
+    }
+    .col2-set {
+        margin: 0 0 15px;
+    }
+}
+
+
+/* General Box ============================================================== */
+.box-account {
+    margin: 0 0 30px;
+    padding: 15px 20px;
+    border: 10px $background-color solid;
+    .box-head {
+        margin: -15px -20px 15px;
+        padding: 0 0 10px;
+        text-align: right;
+        background: $background-color;
+    }
+    h2 {
+        margin: 0;
+        float: left;
+        font: bold 1.43em/1 $heading-font-family;
+    }
+    .box-title {
+        margin: 0 0 10px;
+        padding: 0 0 2px;
+        text-align: right;
+        border-bottom: 1px $background-color solid;
+        h3, h4 {
+            float: left;
+            margin: 0;
+            font: bold 1.14em/1 $heading-font-family;
+        }
+    }
+}
+
+
+/* Block: Account Information =============================================== */
+.dashboard .box-info {
+    h4 { 
+        font-size: .92em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    address {
+        font-style: normal;
+    }
+
+    /* Breakpoint: 590 ============================================== */
+    @media (max-width: 590px) {
+        .col-1,
+        .col-2 {
+            float: none;
+            width: auto;
+        }
+        .col-2 {
+            margin: 25px 0 0;
+        }
+    }
+
+}
+
+
+/* Block: Recent ============================================================ */
+.dashboard .box-recent {
+    padding-bottom: 20px;
+    .box-head {
+        margin-bottom: 20px;
+    }
+    .data-table-wrapper {
+        max-width: 100%;
+        overflow: auto;
+    }
+}
+
+
+/* Block: Reviews =========================================================== */
+.dashboard .box-reviews .number { float: left; font-size: .83em; font-weight: bold; line-height: 1; color: #fff; margin: 3px -20px 0 0; padding: 2px 3px; background: mix($highlight-color, #000000); }
+.dashboard .box-reviews ol { list-style: none; }
+.dashboard .box-reviews .details { margin-left: 20px; }
+.dashboard .box-reviews li.item { margin: 0 0 7px; }
+.dashboard .box-reviews li.item.last { margin: 0; }
+.dashboard .box-reviews .ratings { margin: 7px 0 0; }
+
+
+/* Block: Tags ============================================================== */
+.dashboard .box-tags .number { float: left; font-size: .83em; font-weight: bold; line-height: 1; color: #fff; margin: 3px -20px 0 0; padding: 2px 3px; background: mix($highlight-color, #000000); }
+.dashboard .box-tags ol { list-style: none; }
+.dashboard .box-tags .details { margin-left: 20px; }
+.dashboard .box-tags li.item { margin: 0 0 7px; }
+.dashboard .box-tags li.item.last { margin: 0; }
+.dashboard .box-tags .tags strong,
+.dashboard .box-tags .tags ul,
+.dashboard .box-tags .tags ul li { display: inline; }
+
+
+/* Address Book ============================================================= */
+.addresses-list {
+    h2 {
+        font: bold 1.08em $heading-font-family;
+        text-transform: uppercase;
+    }
+    h3 { 
+        font: bold 1.08em $heading-font-family;
+    }
+    address { 
+        margin: 0 0 3px;
+        font-style: normal;
+    }
+    p { 
+        margin: 0;
+    }
+    a { 
+        font-weight: bold;
+    }
+    .link-remove { 
+        color: #646464;
+    }
+    .separator { 
+        margin:0 3px;
+    }
+    ol { 
+        list-style: none;
+    }
+    li {
+        &.item { 
+            margin: 0 0 15px;
+            padding: 15px 0 0;
+            border-top: 1px $background-color solid;
+            &:first-child {
+                border-top: none;
+                padding-top: none;
+            }
+        }
+        &.empty { 
+            padding: 0;
+            border: 0;
+            p { 
+                font-weight: bold;
+            }
+        }
+    }
+    .addresses-additional li.item { 
+        padding: 0;
+        border: 0;
+    }
+
+    /* Breakpoint: 540 ============================================== */
+    @media (max-width: 540px) {
+        .col-1,
+        .col-2 {
+            float: none;
+            width: auto;
+        }
+        .col-2 {
+            margin: 25px 0 0;
+        }
+    }
+
+}
+
+
+/* Order View =============================================================== */
+.order-info { 
+    margin: 0 0 15px;
+    padding: 5px 8px;
+    font: 1.07em $heading-font-family;
+    background: $background-color;
+    dt,
+    dd,
+    ul,
+    li {
+        display: inline;
+    }
+    .current {
+        font-weight: bold;
+    }
+    li {
+        margin: 0 3px;
+    }
+}
+
+.order-date { margin: 10px 0; }
+
+.order-info-box { 
+    margin: 0 0 25px;
+    h2 {
+        padding: 0 0 3px;
+        font: bold 1.08em $heading-font-family;
+        border-bottom: 1px $background-color solid;
+    }
+    address {
+        font-style: normal;
+    }
+    p {
+        margin: 0 0 3px;
+    }
+    th {
+        padding-right: 7px;
+        font-weight: bold;
+    }
+
+    /* Breakpoint: 600 ============================================== */
+    @media all and (max-width: 600px) {
+        .col-1,
+        .col-2 {
+            float: none;
+            width: auto;
+        }
+        .col-2 {
+            margin: 25px 0 0;
+        }
+    }
+
+}
+
+.order-items {
+    margin: 0 0 30px;
+    width: 100%;
+    overflow-x: auto;
+    .table-caption {
+        margin: 0 0 5px;
+        font: bold 1.14em $heading-font-family;
+    }
+    .product-name {
+        margin: 0;
+        font: bold 1.08em $heading-font-family;
+    }
+    td {
+        vertical-align: top;
+    }
+    .a-right br {
+        display: none;
+    }
+    .item-options {
+        dt {
+            margin: 0 5px 0 0;
+            float: left;
+            clear: left;
+            font-size: 12px;
+            font-style: normal;
+            &:after {
+                content: ":";
+            }
+        }
+        dd {
+            margin: 0;
+            padding: 0;
+            float: left;
+            font-size: 12px;
+        }
+    }
+    tr.discount {
+        color: #bf0000;
+    }
+}
+
+.order-additional { margin: 15px 0; }
+
+.my-orders-table-wrapper {
+    margin: 0 0 18px;
+    max-width: 100%;
+    overflow: auto;
+}
+
+
+/* Order Gift Message ======================================================= */
+.gift-message dt strong { color: #666; }
+.gift-message dd { font-size: 13px; margin: 5px 0 0; }
+
+
+/* Order Comments ============================================================ */
+.order-about dt { font-weight: bold; }
+.order-about dd { font-size: 13px; margin: 0 0 7px; }
+
+.tracking-table { margin: 0 0 15px; }
+.tracking-table th { font-weight: bold; white-space: nowrap; }
+
+.tracking-table-popup { width: 100%; }
+.tracking-table-popup th { font-weight: bold; white-space: nowrap; }
+.tracking-table-popup th,
+.tracking-table-popup td { padding: 1px 8px; }
+
+
+/* Order Print Pages ======================================================== */
+.page-print .print-head { margin: 0 0 15px; }
+.page-print .print-head .logo { float: left; }
+.page-print .print-head address { float: left; margin-left: 15px; }
+.page-print h1 { font-size: 16px; font-weight: bold; }
+.page-print h2,
+.page-print h3 { font-size: 13px; font-weight: bold; }
+.page-print h2.h2 { font-size: 16px; font-weight: bold; }
+.page-print .order-date { background: url(../images/bkg_divider1.gif) 0 100% repeat-x; padding: 0 0 10px; margin: 0 0 10px; }
+.page-print .col2-set { margin: 0 0 10px; }
+
+
+/* Price Rewrites =========================================================== */
+.page-print .gift-message-link { display: none; }
+.page-print .price-excl-tax,
+.page-print .price-incl-tax { display: block; white-space: nowrap; }
+.page-print .cart-price,
+.page-print .price-excl-tax .label,
+.page-print .price-incl-tax .label,
+.page-print .price-excl-tax .price,
+.page-print .price-incl-tax .price { display: inline; }
+
+
+/* My Wishlist ============================================================== */
+.my-wishlist {
+    .data-table {
+        display: table;
+        .table-cell { 
+            padding: 10px;
+            vertical-align: top;
+        }
+        .header-row .table-cell {
+            padding: 2px 8px;
+        }
+        button.button { 
+            margin-left: 5px;
+            > span {
+                white-space: nowrap;
+            }
+        }
+    }
+    .product-image { 
+        display: block; 
+        width: 113px; 
+        height: 113px; 
+        margin: 0 0 5px;
+    }
+    .product-name {
+        margin: 0 0 2px;
+        font: bold 1.14em $heading-font-family;
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+    .price-box {
+        margin: 0 0 13px;
+        font: bold 15px $default-font-family;
+        text-transform: uppercase;
+    }
+    .add-to-cart-alt {
+        margin: 0 0 15px;
+        input.qty {
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        button.button {
+            margin-left: 0;
+        }
+    }
+    .details {
+        text-decoration: none;
+        &:before {
+            content: "?";
+            float: left;
+            margin: 2px 5px 0 0;
+            width: 18px;
+            height: 18px;
+            color: #fff;
+            font-size: 10px;
+            line-height: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background: $highlight-color;
+            border-radius: 9px;
+        }
+    }
+    .truncated {
+        margin: 0 0 10px;
+    }
+    textarea {
+        margin: 6px 0 0;
+        display: block;
+        width: 97%;
+        height: 109px;
+    }
+    .buttons-set { 
+        margin-top: 2em;
+        button.button { 
+            float: none;
+        }
+    }
+
+    /* Breakpoint: 590 ============================================== */
+    @media (max-width: 590px) {
+        .buttons-set {
+            text-align: center;
+            button.button {
+                margin-bottom: 4px;
+            }
+        }
+    }
+
+    /* Breakpoint: 570 ============================================== */
+    @media (max-width: 570px) {
+        .product-image {
+            width: 50px;
+            height: 50px;
+            img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+
+    /* Breakpoint: 480 ============================================== */
+    @media (max-width: 480px) {
+        div.data-table {
+            display: block;
+            div.table-row.header-row {
+                display: none;
+            }
+            div.table-row {
+                display: block;
+            }
+            div.table-cell {
+                display: block;
+            }
+        }
+        .product-image {
+            float: left;
+            margin: 0 15px 0 0;
+        }
+        .description {
+            clear: left;
+            font-size: 12px;
+        }
+    }
+
+}
+#wishlist-table .add-to-links { white-space: nowrap; }
+
+
+/* My Tags ================================================================== */
+.my-tag-edit { float: left; margin: 0 0 10px; }
+.my-tag-edit .btn-remove { float: right; margin: 4px 0 0 5px; }
+#my-tags-table { clear: both; }
+#my-tags-table td { padding: 10px; }
+#my-tags-table .add-to-links { white-space: nowrap; }
+
+/* My Reviews =============================================================== */
+#my-reviews-table {
+    .table-body-row {
+        .table-cell { 
+            padding: 10px;
+        }
+    }
+
+    /* Breakpoint: 575 ============================================== */
+    @media (max-width: 575px) {
+        display: block;
+        .table-row {
+            display: block;
+            padding: 10px;
+            border-top: 1px $background-color solid;
+            &.first {
+                border-top: none;
+            }
+        }
+        .table-cell {
+            display: block;
+            border: none;
+        }
+        .table-body-row .table-cell {
+            padding: 0;
+        }
+    }
+
+}
+
+.product-review .product-img-box { float: left; width: 140px;  }
+.product-review .product-img-box .product-image { display: block; width: 125px; height: 125px; }
+.product-review .product-img-box .label { font-size: 11px; margin: 0 0 3px; }
+.product-review .product-img-box .ratings .rating-box { float: none; display: block; margin: 0 0 3px; }
+.product-review .product-details { margin-left: 150px; }
+.product-review .product-name { font-size: 16px; font-weight: bold; margin: 0 0 10px; }
+.product-review h3 { font-size: 12px; margin: 0 0 3px; color: #2f2f2f; }
+.product-review .ratings-table { margin: 0 0 10px; }
+.product-review dt { font-weight: bold; }
+.product-review dd { font-size: 13px; margin: 5px 0 0; }
+
+
+/* Billing Agreements ======================================================= */
+.billing-agreements .info-box{ margin: 15px 0; }
+.billing-agreements .form-list li select { float: left; }
+.billing-agreements .form-list li button.button { float: left; margin-left: 10px; }
+.billing-agreements .table-caption { font-weight: bold; font-size: 13px; }
+
+
+/* =============================================================================
+   ACCOUNT LOGIN / CREATE PAGES
+============================================================================= */
+.account-login {
+    .content {
+        position: relative;
+        border: 10px $background-color solid;
+        padding: 15px 20px;
+        min-height: 300px;
+        h2 {
+            margin: -15px -20px 15px;
+            padding: 0 0 10px;
+            font: bold 1.43em/1.2 $heading-font-family;
+            background: $background-color;
+        }
+        .form-list {
+            margin: 10px 0 0;
+        }
+        .forgot-password {
+            font-size: 12px;
+        }
+        .buttons-set {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+            padding: 0 20px;
+        }
+    }
+}

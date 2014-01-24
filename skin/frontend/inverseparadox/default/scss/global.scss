@@ -1,0 +1,214 @@
+@import "normalize";
+@import "mixins";
+@import "var";
+
+/* =============================================================================
+   DEFAULTS
+============================================================================= */
+body {
+    min-width: 320px;
+    font: $default-font-size $default-font-family;
+    line-height: 1.5;
+    color: $default-font-color;
+    background-color: #fff;
+}
+a {
+    color: $default-link-color;
+    &:hover, &:active {
+        color: $default-font-color;
+    }
+}
+br.clear {
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@import "magento-defaults";
+
+
+/* =============================================================================
+   PAGE WRAPPER
+============================================================================= */
+.container {
+    margin: 0 auto;
+    @extend %clearfix;
+    width: 94%;
+    max-width: 1140px;
+}
+
+
+/* =============================================================================
+   HEADER
+============================================================================= */
+.header {
+    @extend %clearfix;
+
+    /* remove this later */
+    background: #ccc;
+    h1.logo {
+        float: left;
+        margin: 15px 0;
+        width: 167px;
+        height: 47px;
+        strong {
+            display: none;
+        }
+    }
+    .quick-access {
+        float: right;
+    }
+}
+
+
+/* =============================================================================
+   MAIN NAV
+============================================================================= */
+.nav {
+    @extend %clearfix;
+}
+
+.nav-container {
+    /* remove this later */
+    margin: 0 0 20px;
+    border: 1px #000 solid;
+    ul {
+        li {
+            float: left;
+            padding: 5px;
+            border-left: 1px #000 solid;
+            position: relative;
+            ul {
+                display: none;
+                width: 100px;
+                background: #fff;
+                border: 1px #000 solid;
+                li {
+                    float: none;
+                    border: none;
+                }
+            }
+            &:first-child {
+                border-left: none;
+            }
+            &:hover > ul {
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 26px;
+            }
+            li:hover > ul {
+                left: 100px;
+                top: 0;
+            }
+        }
+    }
+}
+
+
+/* =============================================================================
+   PAGE BODY
+============================================================================= */
+.page-body {
+    @extend %clearfix;
+}
+/* remove this later */
+.cms-home .col-left {
+    width: 30%;
+    float: left;
+}
+.cms-home .home-spot {
+    float: right;
+    width: 65%;
+}
+
+/* =============================================================================
+   COLUMNS
+============================================================================= */
+.main {
+    @extend %clearfix;
+}
+.side {
+    @extend %clearfix;
+}
+
+/* 1 column layout ========================================================== */
+.col1-layout .main {
+    width: 100%;
+}
+
+/* 2 column left layout ===================================================== */
+.col2-left-layout {
+
+    .main {
+        float: right;
+        width: 73%;
+    }
+    .side {
+        float: left;
+        width: 24%;
+    }
+
+    /* Breakpoint: 980 ============================================== */
+    @media (max-width: 980px) {
+        .main {
+            float: none;
+            width: auto;
+        }
+        .side {
+            float: none;
+            width: auto;
+        }
+    }
+
+}
+
+/* 2 column right layout ==================================================== */
+.col2-right-layout {
+    .main {
+        float: left;
+        width: 70%;
+    }
+    .side {
+        float: right;
+        width: 25%;
+    }
+
+    /* Breakpoint: 900 ============================================== */
+    @media (max-width: 900px) {
+        .main {
+            float: none;
+            width: auto;
+        }
+        .side {
+            float: none;
+            margin: 30px 0 0;
+            width: auto;
+        }
+    }
+
+}
+
+
+
+/* =============================================================================
+   FOOTER
+============================================================================= */
+.footer {
+    @extend %clearfix;
+
+    margin-top: 20px;
+    border-top: 1px #000 solid;
+}
+
+
+/* =============================================================================
+   MAIN CONTENT INCLUDES
+============================================================================= */
+@import "magento-content";
+@import "interior-pages";
+@import "home";
