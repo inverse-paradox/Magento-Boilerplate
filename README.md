@@ -1,4 +1,7 @@
-magento-boilerplate
-===================
+Responsive Magento Theme
+========================
 
-Magento boilerplate theme
+####Includes:
+* jQuery
+* SASS
+* Magnific Popup
