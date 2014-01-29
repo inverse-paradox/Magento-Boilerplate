@@ -1,10 +1,5 @@
 <?php
-/**
- * Customer login form template
- *
- * @see app/design/frontend/base/default/template/customer/form/login.phtml
- */
-/** @var $this Mage_Customer_Block_Form_Login */
+/* @var $this Mage_Customer_Block_Form_Login */
 ?>
 <div class="account-login">
     <div class="page-title">
@@ -12,6 +7,9 @@
     </div>
     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
     <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form">
+        <?php
+        /* @TODO text with/without formkey */
+        ?>
         <div class="col2-set">
             <div class="col-1 new-users">
                 <div class="content">
