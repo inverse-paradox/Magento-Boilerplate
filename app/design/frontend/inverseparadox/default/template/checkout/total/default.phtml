@@ -31,7 +31,9 @@ if (substr($_title, 0, 8) == 'Discount') {
     $_subtitle = substr($_title, 8);
     $_title = 'Discount<span class="subtitle">' . $_subtitle . '</span>';
 }
-
+/**
+ * @TODO remove discount label
+ */
 ?>
 <tr<?php if ($_is_discount) echo ' class="discount"'; ?>>
     <td colspan="<?php echo $this->getColspan(); ?>" style="<?php echo $this->getTotal()->getStyle() ?>" class="a-right label">
