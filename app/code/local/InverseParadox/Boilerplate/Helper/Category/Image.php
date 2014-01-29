@@ -1,4 +1,7 @@
 <?php
+/*
+ * @TODO improve usablity
+ */
 class InverseParadox_Boilerplate_Helper_Category_Image extends Mage_Core_Helper_Abstract
 {
     var

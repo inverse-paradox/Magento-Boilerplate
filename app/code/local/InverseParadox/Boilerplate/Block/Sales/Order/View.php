@@ -1,4 +1,7 @@
 <?php
+/*
+ * @TODO explain
+ */
 class InverseParadox_Boilerplate_Block_Sales_Order_View extends Mage_Sales_Block_Order_View {
     public function getOrder()
     {
