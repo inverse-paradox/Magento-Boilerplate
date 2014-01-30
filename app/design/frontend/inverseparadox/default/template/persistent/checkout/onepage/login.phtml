@@ -33,11 +33,7 @@
         <h3><?php echo $this->__('Returning Customers') ?></h3>
         <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
         <form id="login-form" action="<?php echo $this->getPostAction() ?>" method="post">
-            <?php
-            /*
-             * @TODO test with/without formkey
-             */
-            ?>
+            <?php echo $this->getBlockHtml('formkey'); ?>
             <fieldset>
             <p><?php echo $this->__('Sign in now for a faster checkout process.') ?></p>
             <ul class="form-list">
