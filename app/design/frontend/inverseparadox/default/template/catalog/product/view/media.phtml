@@ -34,7 +34,11 @@
     $_product = $this->getProduct();
     $_helper = $this->helper('catalog/output');
 ?>
-
+<?php
+/*
+ * @TODO move logic to block class
+ */
+?>
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
     <p class="product-image">
         <?php
@@ -61,6 +65,12 @@
     </p>
     <?php if ($_zoom) { ?>
     <script>
+        <?php
+        /*
+         * @TODO move sizes to config
+         */
+        ?>
+
         if (jQuery(window).width() > 725) {
             var zoombox = 400;
         } else if (jQuery(window).width() > 575) {

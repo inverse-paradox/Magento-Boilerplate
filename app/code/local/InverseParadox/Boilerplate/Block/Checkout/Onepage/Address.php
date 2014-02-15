@@ -1,4 +1,7 @@
 <?php
+/*
+ * @TODO explain
+ */
 class InverseParadox_Boilerplate_Block_Checkout_Onepage_Address extends Mage_Checkout_Block_Onepage_Abstract
 {
     /**

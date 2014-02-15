@@ -1,4 +1,7 @@
 <?php
+/*
+ * @TODO compare to my category image model
+ */
 class InverseParadox_Boilerplate_Helper_Category extends Mage_Core_Helper_Abstract
 {
     public function getCategoryThumb($category, $width, $height = null)

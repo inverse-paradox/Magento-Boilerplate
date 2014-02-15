@@ -1,4 +1,7 @@
 <?php
+/*
+ * @TODO explain and improve
+ */
 class InverseParadox_Boilerplate_Block_Customer_Account_Navigation extends Mage_Customer_Block_Account_Navigation
 {
     public function removeLinkByName($name) {
