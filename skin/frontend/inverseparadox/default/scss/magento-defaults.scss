@@ -1,4 +1,25 @@
 /* =============================================================================
+   MAGENTO BOILERPLATE MAGENTO-DEFAULTS.SCSS
+   
+   Misc. default / utility styles
+   
+   - Tools
+   - Layout (columns)
+   - Global Messages
+   - Misc
+   - Notices
+   - Included files
+   - Captcha
+   - Remember me popup
+   - MAP popup
+   - Clears
+   - Other
+   
+   Included in global.scss
+============================================================================= */
+
+
+/* =============================================================================
    TOOLS
 ============================================================================= */
 .hidden       { display:block !important; border:0 !important; margin:0 !important; padding:0 !important; font-size:0 !important; line-height:0 !important; width:0 !important; height:0 !important; overflow:hidden !important; }

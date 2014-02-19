@@ -1,4 +1,30 @@
 /* =============================================================================
+   MAGENTO BOILERPLATE MAGE-CHECKOUT.SCSS
+   
+   - One page checkout
+       - Step indicators
+       - All Steps
+       - Login
+       - Address
+       - Shipping
+       - Payment
+       - Review
+   - Sidebar order summary
+   - Misc
+       - Shipping & Payment methods
+       - Tooltips
+       - Gift messages
+       - Checkout agreements
+       - Centinel
+       - Generic info set
+   - Multiple addresses
+   - Success page
+
+   Included in magento-content.scss
+============================================================================= */
+
+
+/* =============================================================================
    ONE PAGE CHECKOUT
 ============================================================================= */
 .checkout-onepage-index {

@@ -1,3 +1,15 @@
+/* =============================================================================
+   MAGENTO BOILERPLATE GLOBAL.SCSS
+   
+   - Defaults
+   - Page Wrapper
+   - Header
+   - Main Nav
+   - Page Body
+   - Columns
+   - Footer
+    
+============================================================================= */
 /* normalize.css v2.0.1 | MIT License | git.io/normalize */
 /* ==========================================================================
    Additions
@@ -374,6 +386,25 @@ img {
   height: auto; }
 
 /* =============================================================================
+   MAGENTO BOILERPLATE MAGENTO-DEFAULTS.SCSS
+   
+   Misc. default / utility styles
+   
+   - Tools
+   - Layout (columns)
+   - Global Messages
+   - Misc
+   - Notices
+   - Included files
+   - Captcha
+   - Remember me popup
+   - MAP popup
+   - Clears
+   - Other
+   
+   Included in global.scss
+============================================================================= */
+/* =============================================================================
    TOOLS
 ============================================================================= */
 .hidden {
@@ -705,6 +736,23 @@ img {
    INCLUDES
 ============================================================================= */
 /* =============================================================================
+   MAGENTO BOILERPLATE MAGE-GEN-CONTENT.SCSS
+   
+   Misc. text styles
+   
+   - Page titles
+   - Admin-controlled WYSIWYG content
+   - Misc Content Styles
+       - Breadcrumbs
+       - Product name
+       - Product tag list
+       - Advanced search
+       - Sitemap
+       - RSS
+
+   Included in magento-defaults.scss
+============================================================================= */
+/* =============================================================================
    PAGE TITLES
 ============================================================================= */
 h1, h2, h3, h4, h5, h6 {
@@ -849,6 +897,20 @@ h1 {
   line-height: 1.55;
   background-position: 0 4px; }
 
+/* =============================================================================
+   MAGENTO BOILERPLATE MAGE-FORMS.SCSS
+   
+   Forms, fields and buttons
+   
+   - Buttons
+   - Form fields
+       - Fieldset
+       - Grouped fields
+       - Customer fields
+   - Validation
+
+   Included in magento-defaults.scss
+============================================================================= */
 /* =============================================================================
    BUTTONS
 ============================================================================= */
@@ -1157,6 +1219,17 @@ p.required {
     position: relative; }
 
 /* =============================================================================
+   MAGENTO BOILERPLATE MAGE-DATA-TABLES.SCSS
+   
+   Generic styling for tables sitewide
+   
+   - Data tables
+       - Bundled product tables
+       - Generic Info Box
+
+   Included in magento-defaults.scss
+============================================================================= */
+/* =============================================================================
    DATA TABLES
 ============================================================================= */
 .data-table {
@@ -1257,6 +1330,17 @@ div.table-cell {
 .info-table td {
   padding: 2px 0; }
 
+/* =============================================================================
+   MAGENTO BOILERPLATE MAGE-PAGINATION.SCSS
+   
+   Pagination & sorting
+   
+   - Pager
+   - Toolbar
+   - Toolbar: product list top
+
+   Included in magento-defaults.scss
+============================================================================= */
 /* =============================================================================
    PAGER
 ============================================================================= */
@@ -1896,7 +1980,39 @@ div.table-cell {
    MAIN CONTENT INCLUDES
 ============================================================================= */
 /* =============================================================================
+   MAGENTO BOILERPLATE MAGENTO-CONTENT.SCSS
+   
+   Include Magento content styling files
+   
+   Included in global.scss
+============================================================================= */
+/* =============================================================================
    INCLUDES
+============================================================================= */
+/* =============================================================================
+   MAGENTO BOILERPLATE MAGE-SIDEBAR-BLOCKS.SCSS
+   
+   Blocks intended for left/right column
+   
+   - Generic block styles
+   - Mini product list
+   - My account navigation
+   - Currency switcher
+   - Layered navigation
+   - Cart
+   - Wishlist
+   - Related products
+   - Compare products
+   - Poll
+   - Tags
+   - Subscribe
+   - Recently Viewed
+   - Reorder
+   - Banner
+   - Login
+   - Paypal
+
+   Included in magento-content.scss
 ============================================================================= */
 /* =============================================================================
    SIDE BLOCKS
@@ -2269,6 +2385,18 @@ div.table-cell {
     float: none; }
 
 /* =============================================================================
+   MAGENTO BOILERPLATE MAGE-CATEGORY.SCSS
+   
+   Product lists
+   
+   - Category
+       - All Views
+       - Grid View
+       - List View
+
+   Included in magento-content.scss
+============================================================================= */
+/* =============================================================================
    PRODUCT CATEGORY
 ============================================================================= */
 .category-title {
@@ -2450,7 +2578,30 @@ div.table-cell {
       clear: none; } }
 
 /* =============================================================================
-   PRODUCT VIEW
+   MAGENTO BOILERPLATE MAGE-PRODUCT.SCSS
+   
+   Product detail view
+   
+   - Product Essentials
+       - Product Images
+       - Product Shop
+       - Product Options
+       - Add to cart
+       - Rating summary
+       - Availability
+       - Alerts
+   - Product Collateral
+       - Description
+       - Upsells
+       - Reviews
+   - Product Prices
+       - Tier prices
+       - Grouped product prices
+   - Misc
+       - Email to friend
+       - Send to friend
+
+   Included in magento-content.scss
 ============================================================================= */
 /* =============================================================================
    PRODUCT ESSENTIALS
@@ -3151,6 +3302,18 @@ div.table-cell {
   line-height: 21px; }
 
 /* =============================================================================
+   MAGENTO BOILERPLATE MAGE-CART.SCSS
+   
+   Everything on /checkout/cart/
+   
+   - Shopping Cart
+       - Checkout Types
+       - Shopping Cart Table
+       - List View
+
+   Included in magento-content.scss
+============================================================================= */
+/* =============================================================================
    SHOPPING CART
 ============================================================================= */
 .cart .page-title {
@@ -3630,6 +3793,30 @@ tr.summary-details-excluded {
 .cart-tax-total-expanded {
   background-position: 100% -52px; }
 
+/* =============================================================================
+   MAGENTO BOILERPLATE MAGE-CHECKOUT.SCSS
+   
+   - One page checkout
+       - Step indicators
+       - All Steps
+       - Login
+       - Address
+       - Shipping
+       - Payment
+       - Review
+   - Sidebar order summary
+   - Misc
+       - Shipping & Payment methods
+       - Tooltips
+       - Gift messages
+       - Checkout agreements
+       - Centinel
+       - Generic info set
+   - Multiple addresses
+   - Success page
+
+   Included in magento-content.scss
+============================================================================= */
 /* =============================================================================
    ONE PAGE CHECKOUT
 ============================================================================= */
@@ -4502,6 +4689,31 @@ tr.summary-details-excluded {
   display: none; }
 
 /* =============================================================================
+   MAGENTO BOILERPLATE MAGE-ACCOUNT.SCSS
+   
+   - My Account section
+       - Pagination
+       - Dashboard
+       - General box styling
+       - Account Information
+       - Recent
+       - Reviews
+       - Tags
+       - Address book
+       - Order view
+       - Order gift message
+       - Order comments
+       - Order print pages
+       - Price rewrites
+       - Wishlist
+       - My Tags
+       - My Reviews
+       - Billing Agreements
+   - Login / Create Account
+
+   Included in magento-content.scss
+============================================================================= */
+/* =============================================================================
    MY ACCOUNT
 ============================================================================= */
 .my-account .title-buttons .link-rss {
@@ -5058,3 +5270,18 @@ tr.summary-details-excluded {
     right: 0;
     bottom: 20px;
     padding: 0 20px; }
+
+/* =============================================================================
+   MAGENTO BOILERPLATE INTERIOR-PAGES.SCSS
+
+   Interior content page styles (e.g. about us, contact)
+   
+   Included in global.scss
+============================================================================= */
+/* =============================================================================
+   MAGENTO BOILERPLATE HOME.SCSS
+
+   Homepage-specific styles
+   
+   Included in global.scss
+============================================================================= */

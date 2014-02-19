@@ -1,4 +1,20 @@
 /* =============================================================================
+   MAGENTO BOILERPLATE MAGE-FORMS.SCSS
+   
+   Forms, fields and buttons
+   
+   - Buttons
+   - Form fields
+       - Fieldset
+       - Grouped fields
+       - Customer fields
+   - Validation
+
+   Included in magento-defaults.scss
+============================================================================= */
+
+
+/* =============================================================================
    BUTTONS
 ============================================================================= */
 button.button::-moz-focus-inner { padding: 0; border: 0; } /* FF Fix */
