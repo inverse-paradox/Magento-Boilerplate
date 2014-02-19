@@ -204,6 +204,19 @@
         </reference>
     </contacts_index_index>
 
+    <!-- Customer My Account (All Pages) -->
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <!-- <action method="removeLinkByName"><name>recurring_profiles</name></action>
+            <action method="removeLinkByName"><name>billing_agreements</name></action>
+            <action method="removeLinkByName"><name>downloadable_products</name></action>
+            <action method="removeLinkByName"><name>newsletter</name></action>
+            <action method="removeLinkByName"><name>tags</name></action>
+            <action method="removeLinkByName"><name>OAuth Customer Tokens</name></action> -->
+            <action method="addLink" translate="label title" module="customer"><label>Log Out</label><url>customer/account/logout</url><title>Log Out</title><prepare/><urlParams/><position>100</position></action>
+        </reference>
+    </customer_account>
+
     <!-- Catalog Product Reviews List -->
     <review_product_list>
         <reference name="root">
