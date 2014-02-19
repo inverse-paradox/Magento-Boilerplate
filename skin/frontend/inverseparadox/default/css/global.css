@@ -2672,7 +2672,7 @@ div.table-cell {
 /* Product Options ========================================================== */
 .product-options {
   margin: 20px 0 5px;
-  /* Breakpoint: 420 ============================================== */ }
+  /* Breakpoint: 500 ============================================== */ }
   .product-options dt {
     float: left;
     width: 100px; }
@@ -2732,7 +2732,7 @@ div.table-cell {
   .product-options p.note {
     margin: 0;
     font-size: 11px; }
-  @media (max-width: 420px) {
+  @media (max-width: 500px) {
     .product-options dt {
       float: none;
       width: auto; }
@@ -2794,7 +2794,15 @@ div.table-cell {
     display: block;
     margin: 5px 60px 5px 0; }
 
-.add-to-links .link-wishlist {
+.add-to-links .separator {
+  display: none; }
+.add-to-links li {
+  float: left;
+  margin: 0 0 0 10px; }
+  .add-to-links li:first-child {
+    margin: 0; }
+.add-to-links .link-wishlist,
+.add-to-links .link-compare {
   display: inline-block;
   height: 20px;
   padding: 4px 8px;
@@ -2809,15 +2817,21 @@ div.table-cell {
   background-image: linear-gradient(to bottom, #e5e5e5 0%, #c7c7c7 100%);
   border: 1px #ededed solid;
   border-radius: 5px; }
-  .lte-ie9 .add-to-links .link-wishlist {
+  .lte-ie9 .add-to-links .link-wishlist, .lte-ie9
+  .add-to-links .link-compare {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#c7c7c7', GradientType=0); }
 
 .product-options-bottom .add-to-links {
   float: left;
-  margin: 38px 0 0 10px; }
+  margin: 38px 0 0 10px;
+  /* Breakpoint: 400 ========================================== */ }
+  @media (max-width: 400px) {
+    .product-options-bottom .add-to-links {
+      clear: left;
+      margin: 10px 0 0; } }
 .product-options-bottom .add-to-cart {
   float: left;
-  /* Breakpoint: 420 ========================================== */ }
+  /* Breakpoint: 500 ========================================== */ }
   .product-options-bottom .add-to-cart label {
     margin: 0;
     width: 110px;
@@ -2829,7 +2843,7 @@ div.table-cell {
     float: left;
     clear: left;
     margin: 0 0 0 110px; }
-  @media (max-width: 420px) {
+  @media (max-width: 500px) {
     .product-options-bottom .add-to-cart label {
       margin-right: 7px;
       width: auto; }
