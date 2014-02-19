@@ -29,7 +29,7 @@
  * @TODO translate H3 tag
  */
 ?>
-<h3>Shipping</h3>
+<h3><?php echo $this->__('Shipping') ?></h3>
 <?php if ($this->getCheckout()->getStepData('address', 'is_show')): ?>
     <div class="ship-to-summary">
     <h4>
@@ -40,7 +40,7 @@
     </div>
 <?php endif; ?>
 <div class="select-method">
-    <h3>Select Shipping Method</h3>
+    <h3><?php echo $this->__('Select Shipping Method') ?></h3>
     <div class="shipping-method-wrapper">
 
     <?php /** @var $this Mage_Checkout_Block_Onepage_Shipping_Method_Available */ ?>

@@ -27,7 +27,7 @@
 ?>
 <form id="co-address-form" action="">
 <fieldset class="address-block billing-address-block">
-    <h3>Billing Address</h3>
+    <h3><?php echo $this->__('Billing Address'); ?></h3>
     <ul class="form-list">
     <?php if ($this->customerHasAddresses()): ?>
         <li class="wide">
@@ -155,7 +155,7 @@
                 <li class="fields">
                     <fieldset>
                         <p><label class="required"><em>*</em><?php echo $this->__('Create an account?') ?></label></p>
-                        <p class="field-description">Registering with us makes checkout fast and easy, and gives you easy access to your order status and history.</p>
+                        <p class="field-description"><?php echo $this->__('Registering with us makes checkout fast and easy, and gives you easy access to your order status and history.'); ?></p>
                         <ul>
                             <li class="control">
                                 <input type="radio" name="checkout_method" id="login:register" value="register" title="<?php echo $this->__('Yes, create an account') ?>" <?php if($this->getQuote()->getCheckoutMethod()==Mage_Checkout_Model_Type_Onepage::METHOD_REGISTER || !$this->getQuote()->isAllowedGuestCheckout() || !$this->getQuote()->getCheckoutMethod()): ?> checked="checked"<?php endif ?> onclick="$('register-customer-password').style.display = 'block';" class="radio" /><label for="login:register"><?php echo  $this->__('Yes, create an account') ?></label></li>
@@ -189,7 +189,7 @@
 </fieldset>
 
 <fieldset class="address-block shipping-address-block">
-    <h3>Shipping Address</h3>
+    <h3><?php echo $this->__('Shipping Address'); ?></h3>
     <ul class="form-list">
     <?php if ($this->customerHasAddresses()): ?>
        <li class="wide">

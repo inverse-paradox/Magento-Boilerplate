@@ -24,8 +24,8 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<h3>Review and Place Your Order</h3>
-    <p>Clicking &ldquo;place order&rdquo; will finalize your transaction.</p>
+<h3><?php echo $this->__('Review and Place Your Order'); ?></h3>
+    <p><?php echo $this->__('Clicking &ldquo;place order&rdquo; will finalize your transaction.'); ?></p>
     <div class="shipping-summary">
         <div class="shipping-address-summary">
             <h4>
@@ -107,7 +107,7 @@
 <div id="checkout-review-submit">
     <?php echo $this->getChildHtml('agreements') ?>
     <div class="buttons-set" id="review-buttons-container">
-        <p class="note">Clicking &ldquo;place order&rdquo; will finalize your transaction.</p>
+        <p class="note"><?php echo $this->__('Clicking &ldquo;place order&rdquo; will finalize your transaction.'); ?></p>
         
         <?php echo $this->getChildHtml('button') ?>
         <span class="please-wait" id="review-please-wait" style="display:none;">
