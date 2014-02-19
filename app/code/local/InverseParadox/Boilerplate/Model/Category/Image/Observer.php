@@ -1,5 +1,10 @@
 <?php
-/*
+/**
+ * Category thumbnail cache handing
+ *
+ * Borrowed from somebody, throws errors when refreshing cache sometimes
+ *
+ * @package     InverseParadox_Boilerplate
  * @TODO improve cache usage
  */
 class InverseParadox_Boilerplate_Model_Category_Image_Observer

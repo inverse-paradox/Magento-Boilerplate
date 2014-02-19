@@ -1,7 +1,22 @@
 <?php
+/**
+ * Onepage controller for checkout
+ *
+ * Combine shipping and billing steps into one single step.
+ * Last compatability check: 1.8.0.1
+ *
+ * @package     InverseParadox_Boilerplate
+ * @author      Amanda Mitchell
+ * @see         Mage_Checkout_OnepageController
+ */
 require_once 'Mage/Checkout/controllers/OnepageController.php';
 class InverseParadox_Boilerplate_OnepageController extends Mage_Checkout_OnepageController
 {
+    /**
+     * Save checkout addresses
+     *
+     * Combination of saveBillingAction() and saveShippingAction()
+     */
     public function saveAddressAction()
     {
         if ($this->_expireAjax()) {

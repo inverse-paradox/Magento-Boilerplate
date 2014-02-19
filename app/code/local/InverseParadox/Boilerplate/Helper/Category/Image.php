@@ -1,6 +1,10 @@
 <?php
-/*
- * @TODO improve usablity
+/**
+ * Category thumbnail image resizer
+ *
+ * Borrowed from... somebody. Likely based on one of Magento's image classes.
+ *
+ * @package     InverseParadox_Boilerplate
  */
 class InverseParadox_Boilerplate_Helper_Category_Image extends Mage_Core_Helper_Abstract
 {

@@ -1,4 +1,14 @@
 <?php
+/**
+ * Onepage Checkout Block
+ *
+ * Combine shipping and billing blocks into single address block.
+ * Last compatability check: 1.8.0.1
+ *
+ * @package    InverseParadox_Boilerplate
+ * @author     Amanda Mitchell
+ * @see        Mage_Checkout_Block_Onepage
+ */
 class InverseParadox_Boilerplate_Block_Checkout_Onepage extends Mage_Checkout_Block_Onepage
 {
     /**

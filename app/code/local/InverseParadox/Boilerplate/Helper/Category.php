@@ -1,9 +1,22 @@
 <?php
-/*
- * @TODO compare to my category image model
+/**
+ * (Sub) Category thumbnail helper
+ *
+ * @package     InverseParadox_Boilerplate
+ * @TODO        Compare to Ryan's category image model
  */
 class InverseParadox_Boilerplate_Helper_Category extends Mage_Core_Helper_Abstract
 {
+    
+    /**
+     * Get a category thumbnail in a specific size
+     *
+     * If the category has a thumbnail set, that will be resized and returned.
+     * If not, the thumbnail for the first product with an image in that 
+     * category will be returned.
+     *
+     * @return string url for resized image
+     */
     public function getCategoryThumb($category, $width, $height = null)
     {
         $raw_thumb_url = $category->getThumbnail();

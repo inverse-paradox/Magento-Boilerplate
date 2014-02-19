@@ -1,6 +1,13 @@
 <?php
-/*
- * @TODO explain
+/**
+ * Onepage Checkout Address Block
+ *
+ * Combination of Magento's native billing & shipping blocks.
+ * Last compatability check: 1.8.0.1
+ *
+ * @package    InverseParadox_Boilerplate
+ * @author     Amanda Mitchell
+ * @see        Mage_Checkout_Block_Onepage_Billing, Mage_Checkout_Block_Onepage_Shipping
  */
 class InverseParadox_Boilerplate_Block_Checkout_Onepage_Address extends Mage_Checkout_Block_Onepage_Abstract
 {

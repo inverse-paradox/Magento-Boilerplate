@@ -1,6 +1,14 @@
 <?php
+/**
+ * Subcategory list block
+ *
+ * @package    InverseParadox_Boilerplate
+ * @author     Amanda Mitchell
+ */
+
 class InverseParadox_Boilerplate_Block_Category_List extends Mage_Core_Block_Template
 {
+    
     /**
      * Retrieve current category model object
      *
@@ -14,6 +22,11 @@ class InverseParadox_Boilerplate_Block_Category_List extends Mage_Core_Block_Tem
         return $this->getData('current_category');
     }
 
+    /**
+     * Retrieve collection of current category's direct subcategories
+     *
+     * @return Mage_Catalog_Model_Resource_Category_Collection
+     */
     public function getCurrentSubcategories()
     {
         if (!$this->hasData('current_subcategories')) {
