@@ -160,6 +160,10 @@
 
         </reference>
 
+        <reference name="checkout.onepage.payment">
+            <block type="checkout/cart_coupon" name="checkout.cart.coupon" as="coupon" template="checkout/cart/coupon-payment.phtml"/>
+        </reference>
+
         <reference name="right">
             <action method="unsetChild"><alias>checkout.progress.wrapper</alias></action>
             <block type="page/html" name="checkout.order.summary" as="sidebar_order_summary" template="checkout/onepage/sidebar_summary.phtml">

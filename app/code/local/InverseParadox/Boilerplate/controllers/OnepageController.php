@@ -72,4 +72,53 @@ class InverseParadox_Boilerplate_OnepageController extends Mage_Checkout_Onepage
             $this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
         }
     }
+
+
+    public function couponPostAction()
+    {
+
+        $couponCode = (string) $this->getRequest()->getParam('coupon_code');
+        if ($this->getRequest()->getParam('remove') == 1) {
+            $couponCode = '';
+        }
+        $oldCouponCode = Mage::getSingleton('checkout/cart')->getQuote()->getCouponCode();
+
+        try {
+            $codeLength = strlen($couponCode);
+            $isCodeLengthValid = $codeLength && $codeLength <= Mage_Checkout_Helper_Cart::COUPON_CODE_MAX_LENGTH;
+
+            Mage::getSingleton('checkout/cart')->getQuote()->getShippingAddress()->setCollectShippingRates(true);
+            Mage::getSingleton('checkout/cart')->getQuote()->setCouponCode($isCodeLengthValid ? $couponCode : '')
+                ->collectTotals()
+                ->save();
+
+            if ($codeLength) {
+                if ($isCodeLengthValid && $couponCode == Mage::getSingleton('checkout/cart')->getCouponCode()) {
+                    Mage::getSingleton('checkout/session')->addSuccess(
+                        $this->__('Coupon code "%s" was applied.', Mage::helper('core')->escapeHtml($couponCode))
+                    );
+                } else {
+                    Mage::getSingleton('checkout/session')->addError(
+                        $this->__('Coupon code "%s" is not valid.', Mage::helper('core')->escapeHtml($couponCode))
+                    );
+                }
+            } else {
+                Mage::getSingleton('checkout/session')->addSuccess($this->__('Coupon code was canceled.'));
+            }
+
+        } catch (Mage_Core_Exception $e) {
+            Mage::getSingleton('checkout/session')->addError($e->getMessage());
+        } catch (Exception $e) {
+            Mage::getSingleton('checkout/session')->addError($this->__('Cannot apply the coupon code.'));
+            Mage::logException($e);
+        }
+
+        $result['goto_section'] = 'payment';
+        $result['update_section'] = array(
+            'name' => 'payment-method',
+            'html' => $this->_getPaymentMethodsHtml()
+        );
+        $this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
+    }
+
 }
