@@ -332,16 +332,16 @@
         li {
             width: 18.4%
         }
-        .first-4-col {
+        .after-fourth {
             clear: none;
         }
-        .last-4-col {
+        .fourth {
             margin-right: 2%;
         }
-        .first-5-col {
+        .after-fifth {
             clear: left;
         }
-        .last-5-col {
+        .fifth {
             margin-right: 0;
         }
     }
@@ -352,16 +352,16 @@
             li {
                 width: 23.5%
             }
-            .first-5-col {
+            .after-fifth {
                 clear: none;
             }
-            .last-5-col {
+            .fifth {
                 margin-right: 2%;
             }
-            .first-4-col {
+            .after-fourth {
                 clear: left;
             }
-            .last-4-col {
+            .fourth {
                 margin-right: 0;
             }
         }
@@ -373,10 +373,10 @@
             li {
                 width: 32%
             }
-            .first-4-col {
+            .after-fourth {
                 clear: none;
             }
-            .last-4-col {
+            .fourth {
                 margin-right: 2%;
             }
             .odd {
@@ -385,10 +385,10 @@
             .even {
                 margin-right: 2%;
             }
-            .first-3-col {
+            .after-third {
                 clear: left;
             }
-            .last-3-col {
+            .third {
                 margin-right: 0;
             }
         }

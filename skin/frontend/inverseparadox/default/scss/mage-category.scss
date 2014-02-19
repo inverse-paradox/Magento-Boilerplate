@@ -78,10 +78,10 @@
         float: left;
         margin: 0 2% 2% 0;
         width: 23.5%;
-        &.last-4-col {
+        &.fourth {
             margin-right: 0;
         }
-        &.first-4-col {
+        &.after-fourth {
             clear: left;
         }
     }
@@ -116,16 +116,16 @@
     @media (max-width: 810px) {
         li {
             width: 32%;
-            &.last-4-col {
+            &.fourth {
                 margin-right: 2%;
             }
-            &.first-4-col {
+            &.after-fourth {
                 clear: none;
             }
-            &.last-3-col {
+            &.third {
                 margin-right: 0;
             }
-            &.first-3-col {
+            &.after-third {
                 clear: left;
             }
         }
@@ -135,10 +135,10 @@
     @media (max-width: 560px) {
         li {
             width: 49%;
-            &.last-3-col {
+            &.third {
                 margin-right: 2%;
             }
-            &.first-3-col {
+            &.after-third {
                 clear: none;
             }
             &.even {
