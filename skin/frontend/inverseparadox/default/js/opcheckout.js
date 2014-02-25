@@ -64,10 +64,21 @@ Checkout.prototype = {
     },
 
     reloadProgressBlock: function(toStep) {
-        var updater = new Ajax.Updater('checkout-progress-wrapper', this.progressUrl, {
-            method: 'get',
-            onFailure: this.ajaxFailure.bind(this),
-            parameters: toStep ? {toStep: toStep} : null
+        this.reloadStep(toStep);
+        if (this.syncBillingShipping) {
+            this.syncBillingShipping = false;
+            this.reloadStep('shipping');
+        }
+    },
+
+    reloadStep: function(prevStep) {
+        var updater = new Ajax.Updater(prevStep + '-progress-opcheckout', this.progressUrl, {
+            method:'get',
+            onFailure:this.ajaxFailure.bind(this),
+            onComplete: function(){
+                this.checkout.resetPreviousSteps();
+            },
+            parameters:prevStep ? { prevStep:prevStep } : null
         });
     },
 
@@ -108,12 +119,45 @@ Checkout.prototype = {
         this.loadWaiting = step;
     },
 
-    gotoSection: function(section)
-    {
-        var sectionElement = $('opc-'+section);
+    gotoSection: function (section, reloadProgressBlock) {
+        if (reloadProgressBlock) {
+            this.reloadProgressBlock(this.currentStep);
+        }
+        this.currentStep = section;
+        var sectionElement = $('opc-' + section);
         sectionElement.addClassName('allow');
-        this.accordion.openSection('opc-'+section);
-        this.reloadProgressBlock(section);
+        this.accordion.openSection('opc-' + section);
+        if(!reloadProgressBlock) {
+            this.resetPreviousSteps();
+        }
+    },
+
+    resetPreviousSteps: function () {
+        var stepIndex = this.steps.indexOf(this.currentStep);
+
+        //Clear other steps if already populated through javascript
+        for (var i = stepIndex; i < this.steps.length; i++) {
+            var nextStep = this.steps[i];
+            var progressDiv = nextStep + '-progress-opcheckout';
+            if ($(progressDiv)) {
+                //Remove the link
+                $(progressDiv).select('.changelink').each(function (item) {
+                    item.remove();
+                });
+                $(progressDiv).select('dt').each(function (item) {
+                    item.removeClassName('complete');
+                });
+                //Remove the content
+                $(progressDiv).select('dd.complete').each(function (item) {
+                    item.remove();
+                });
+            }
+        }
+    },
+
+    changeSection: function (section) {
+        var changeStep = section.replace('opc-', '');
+        this.gotoSection(changeStep, false);
     },
 
     continueAsGuest: function() {
@@ -189,7 +233,18 @@ Checkout.prototype = {
 
     back: function(){
         if (this.loadWaiting) return;
-        this.accordion.openPrevSection(true);
+        //Navigate back to the previous available step
+        var stepIndex = this.steps.indexOf(this.currentStep);
+        var section = this.steps[--stepIndex];
+        var sectionElement = $('opc-' + section);
+
+        //Traverse back to find the available section. Ex Virtual product does not have shipping section
+        while (sectionElement === null && stepIndex > 0) {
+            --stepIndex;
+            section = this.steps[stepIndex];
+            sectionElement = $('opc-' + section);
+        }
+        this.changeSection('opc-' + section);
     },
 
     setStepResponse: function(response){
@@ -208,7 +263,7 @@ Checkout.prototype = {
         // }
 
         if (response.goto_section) {
-            this.gotoSection(response.goto_section);
+            this.gotoSection(response.goto_section, true);
             return true;
         }
         if (response.redirect) {
